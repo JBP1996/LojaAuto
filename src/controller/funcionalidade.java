@@ -34,10 +34,10 @@ public class funcionalidade {
         acb.add(cb);
     }
     
-    public void inserirCarro(Carro c,int pessoa,String matricula,String marca,String modelo,Year ano,
-        String cor,String combustivel,ArrayList <Carro> ac){
+    public void inserirCarro(Carro c,int pessoa,String matricula,String marca,String modelo,int ano,
+        String cor,String combustivel,double preco,ArrayList <Carro> ac){
         
-        c= new Carro(matricula, marca, modelo, ano, cor, combustivel, ap.get(pessoa));
+        c= new Carro(matricula, marca, modelo, ano, cor, combustivel,preco, ap.get(pessoa));
         ac.add(c);
     }
 }

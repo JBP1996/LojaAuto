@@ -16,18 +16,20 @@ public class Carro {
     private String matricula;
     private String marca;
     private String modelo;
-    private Year ano;
+    private int ano;
     private String cor;
     private String combustivel;
+    private double preco;
     private Pessoa titular;
 
-    public Carro(String matricula, String marca, String modelo, Year ano, String cor, String combustivel, Pessoa titular) {
+    public Carro(String matricula, String marca, String modelo, int ano, String cor, String combustivel, double preco, Pessoa titular) {
         this.matricula = matricula;
         this.marca = marca;
         this.modelo = modelo;
         this.ano = ano;
         this.cor = cor;
         this.combustivel = combustivel;
+        this.preco = preco;
         this.titular = titular;
     }
 
@@ -55,11 +57,11 @@ public class Carro {
         this.modelo = modelo;
     }
 
-    public Year getAno() {
+    public int getAno() {
         return ano;
     }
 
-    public void setAno(Year ano) {
+    public void setAno(int ano) {
         this.ano = ano;
     }
 
@@ -79,6 +81,14 @@ public class Carro {
         this.combustivel = combustivel;
     }
 
+    public double getPreco() {
+        return preco;
+    }
+
+    public void setPreco(double preco) {
+        this.preco = preco;
+    }
+    
     public Pessoa getTitular() {
         return titular;
     }

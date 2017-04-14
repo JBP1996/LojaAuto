@@ -8,6 +8,8 @@ package lojaAuto;
 
 
 import controller.funcionalidade;
+import java.time.Year;
+import java.time.format.DateTimeFormatter;
 import model.ContaBancaria;
 import model.Pessoa;
 import java.util.ArrayList;
@@ -81,20 +83,23 @@ public class Principal extends javax.swing.JFrame {
         matricula = new javax.swing.JTextField();
         InserirCa = new javax.swing.JButton();
         jLabel21 = new javax.swing.JLabel();
-        matricula1 = new javax.swing.JTextField();
+        marca = new javax.swing.JTextField();
         jLabel22 = new javax.swing.JLabel();
-        matricula2 = new javax.swing.JTextField();
+        modelo = new javax.swing.JTextField();
         jLabel23 = new javax.swing.JLabel();
-        matricula3 = new javax.swing.JTextField();
-        matricula4 = new javax.swing.JTextField();
+        ano = new javax.swing.JTextField();
+        cor = new javax.swing.JTextField();
         jLabel24 = new javax.swing.JLabel();
-        matricula5 = new javax.swing.JTextField();
+        combustivel = new javax.swing.JTextField();
         jLabel25 = new javax.swing.JLabel();
+        preco = new javax.swing.JTextField();
+        jLabel26 = new javax.swing.JLabel();
         Listar = new javax.swing.JPanel();
         scrollPane = new javax.swing.JScrollPane();
         tabela = new javax.swing.JTable();
         ListarPessoas = new javax.swing.JRadioButton();
         ListarContas = new javax.swing.JRadioButton();
+        ListarCarros = new javax.swing.JRadioButton();
         Login = new javax.swing.JPanel();
         LoginPanel = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
@@ -161,7 +166,7 @@ public class Principal extends javax.swing.JFrame {
         });
 
         opcaoInserir.add(InserirCarros);
-        InserirCarros.setText("Carros");
+        InserirCarros.setText("Inserir Carros");
         InserirCarros.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 InserirCarrosItemStateChanged(evt);
@@ -347,21 +352,14 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel25.setText("Combustivel:");
 
+        jLabel26.setText("Preco:");
+
         javax.swing.GroupLayout CarroLayout = new javax.swing.GroupLayout(Carro);
         Carro.setLayout(CarroLayout);
         CarroLayout.setHorizontalGroup(
             CarroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(CarroLayout.createSequentialGroup()
                 .addGroup(CarroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(CarroLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel24)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(matricula4, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel25)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(matricula5, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(CarroLayout.createSequentialGroup()
                         .addGap(177, 177, 177)
                         .addComponent(jLabel19))
@@ -373,20 +371,35 @@ public class Principal extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(jLabel23)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(matricula3, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(ano, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(CarroLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jLabel21)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(matricula1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(marca, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jLabel22)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(matricula2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(modelo, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(CarroLayout.createSequentialGroup()
-                        .addGap(181, 181, 181)
-                        .addComponent(InserirCa)))
-                .addContainerGap(33, Short.MAX_VALUE))
+                        .addContainerGap()
+                        .addGroup(CarroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(CarroLayout.createSequentialGroup()
+                                .addComponent(jLabel24)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(cor, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(CarroLayout.createSequentialGroup()
+                                .addComponent(jLabel26)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(preco, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(18, 18, 18)
+                        .addGroup(CarroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(InserirCa)
+                            .addGroup(CarroLayout.createSequentialGroup()
+                                .addComponent(jLabel25)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(combustivel, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
         CarroLayout.setVerticalGroup(
             CarroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -398,21 +411,25 @@ public class Principal extends javax.swing.JFrame {
                     .addComponent(jLabel20)
                     .addComponent(matricula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel23)
-                    .addComponent(matricula3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(ano, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(CarroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel21)
-                    .addComponent(matricula1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(marca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel22)
-                    .addComponent(matricula2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(modelo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(CarroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel24)
-                    .addComponent(matricula4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel25)
-                    .addComponent(matricula5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(combustivel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(InserirCa)
+                .addGroup(CarroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(InserirCa)
+                    .addGroup(CarroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel26)
+                        .addComponent(preco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(138, Short.MAX_VALUE))
         );
 
@@ -424,7 +441,6 @@ public class Principal extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(InserirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(InserirLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel1)
                         .addGap(180, 180, 180))
                     .addComponent(Carro, javax.swing.GroupLayout.DEFAULT_SIZE, 464, Short.MAX_VALUE)
@@ -514,17 +530,27 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
+        opcaoListar.add(ListarCarros);
+        ListarCarros.setText("Listar Carros");
+        ListarCarros.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                ListarCarrosItemStateChanged(evt);
+            }
+        });
+
         javax.swing.GroupLayout ListarLayout = new javax.swing.GroupLayout(Listar);
         Listar.setLayout(ListarLayout);
         ListarLayout.setHorizontalGroup(
             ListarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ListarLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(22, Short.MAX_VALUE)
                 .addGroup(ListarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(ListarLayout.createSequentialGroup()
                         .addComponent(ListarPessoas)
                         .addGap(18, 18, 18)
-                        .addComponent(ListarContas))
+                        .addComponent(ListarContas)
+                        .addGap(18, 18, 18)
+                        .addComponent(ListarCarros))
                     .addComponent(scrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 452, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
@@ -534,8 +560,9 @@ public class Principal extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(ListarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ListarPessoas)
-                    .addComponent(ListarContas))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
+                    .addComponent(ListarContas)
+                    .addComponent(ListarCarros))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 196, Short.MAX_VALUE)
                 .addComponent(scrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -775,7 +802,7 @@ public class Principal extends javax.swing.JFrame {
             LoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(LoginLayout.createSequentialGroup()
                 .addGap(20, 20, 20)
-                .addComponent(LoginSucesso, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(LoginSucesso, javax.swing.GroupLayout.DEFAULT_SIZE, 444, Short.MAX_VALUE)
                 .addGap(20, 20, 20))
             .addGroup(LoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(LoginLayout.createSequentialGroup()
@@ -1060,7 +1087,33 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_transferirbtnMouseClicked
 
     private void InserirCaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_InserirCaMouseClicked
-        // TODO add your handling code here:
+        // TODO add your handling code here:          
+        if(ac.size()==0){
+            javax.swing.JOptionPane.showMessageDialog(null,"Carro adicionado com sucesso\n");
+            func.inserirCarro(c, 0, matricula.getText(), marca.getText(), modelo.getText(),
+                Integer.parseInt(ano.getText()), cor.getText(), 
+                combustivel.getText(),Double.parseDouble(preco.getText()), ac);
+        }else{
+            for(int i=0;i<ac.size();i++){
+                if(matricula.getText().equals(ac.get(i).getMatricula())){
+                    javax.swing.JOptionPane.showMessageDialog(null,"Matricula ja existente\n");
+                    break;
+                }else if(i==ac.size()-1 && !matricula.getText().equals(ac.get(i).getMatricula())){
+                    javax.swing.JOptionPane.showMessageDialog(null,"Carro adicionado com sucesso\n");
+                    func.inserirCarro(c, 0, matricula.getText(), marca.getText(), modelo.getText(),
+                        Integer.parseInt(ano.getText()), cor.getText(), 
+                        combustivel.getText(),Double.parseDouble(preco.getText()), ac);
+                    break;
+                }
+            }
+        }
+        matricula.setText("");
+        ano.setText("");
+        marca.setText("");
+        modelo.setText("");
+        cor.setText("");
+        preco.setText("");
+        combustivel.setText("");
     }//GEN-LAST:event_InserirCaMouseClicked
 
     private void InserirCarrosItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_InserirCarrosItemStateChanged
@@ -1074,6 +1127,30 @@ public class Principal extends javax.swing.JFrame {
         Conta.setVisible(false);
         Conta.setEnabled(false);
     }//GEN-LAST:event_InserirCarrosItemStateChanged
+
+    private void ListarCarrosItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_ListarCarrosItemStateChanged
+        // TODO add your handling code here:
+        DefaultTableModel model = (DefaultTableModel) tabela.getModel();
+        for(int i=0;i<model.getRowCount();i++){
+            model.removeRow(i);
+        }
+        model.setColumnCount(0);
+        model.setRowCount(0);
+        model.addColumn("Matricula");
+        model.addColumn("Ano");
+        model.addColumn("Marca");
+        model.addColumn("Modelo");
+        model.addColumn("Cor");
+        model.addColumn("Combustivel");
+        model.addColumn("Preco");
+        model.addColumn("Titular");
+        for(int i=0;i<ac.size();i++){
+            Object[] linha ={ac.get(i).getMatricula(),ac.get(i).getAno(),ac.get(i).getMarca(),
+                ac.get(i).getModelo(),ac.get(i).getCor(),ac.get(i).getCombustivel(),ac.get(i).getPreco(),
+                ac.get(i).getTitular().getNome()};
+            model.addRow(linha);
+        }
+    }//GEN-LAST:event_ListarCarrosItemStateChanged
 
     /**
      * @param args the command line arguments
@@ -1126,6 +1203,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JRadioButton InserirPessoaConta;
     private javax.swing.JPanel Levantar;
     private javax.swing.JPanel Listar;
+    private javax.swing.JRadioButton ListarCarros;
     private javax.swing.JRadioButton ListarContas;
     private javax.swing.JRadioButton ListarPessoas;
     private javax.swing.JPanel Login;
@@ -1136,8 +1214,11 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JPanel PessoaConta;
     private javax.swing.JTabbedPane Principal;
     private javax.swing.JPanel Transferir;
+    private javax.swing.JTextField ano;
     private javax.swing.JLabel bemvindo;
+    private javax.swing.JTextField combustivel;
     private javax.swing.JTextField conta;
+    private javax.swing.JTextField cor;
     private javax.swing.JButton depositarbtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -1157,6 +1238,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -1166,18 +1248,16 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JButton levantarbtn;
     private javax.swing.JButton logout;
+    private javax.swing.JTextField marca;
     private javax.swing.JTextField matricula;
-    private javax.swing.JTextField matricula1;
-    private javax.swing.JTextField matricula2;
-    private javax.swing.JTextField matricula3;
-    private javax.swing.JTextField matricula4;
-    private javax.swing.JTextField matricula5;
+    private javax.swing.JTextField modelo;
     private javax.swing.JTextField nconta;
     private javax.swing.JTextField nomeC;
     private javax.swing.JTextField nomeP;
     private javax.swing.JTextField nomePC;
     private javax.swing.ButtonGroup opcaoInserir;
     private javax.swing.ButtonGroup opcaoListar;
+    private javax.swing.JTextField preco;
     private javax.swing.JTextField quantia;
     private javax.swing.JTextField quantiadepositar;
     private javax.swing.JTextField quantialevantar;
