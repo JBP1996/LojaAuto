@@ -38,6 +38,14 @@ public class Principal extends javax.swing.JFrame {
         initComponents();
         func.inserirPessoa(p, ap, "Stand Loja Auto");
         func.inserirConta(cb,ap.size()-1,0, acb);
+        Pessoa.setVisible(false);
+        Pessoa.setEnabled(false);
+        PessoaConta.setVisible(false);
+        PessoaConta.setEnabled(false);
+        Carro.setVisible(false);
+        Carro.setEnabled(false);
+        Conta.setVisible(false);
+        Conta.setEnabled(false);
     }
 
     /**
@@ -51,6 +59,16 @@ public class Principal extends javax.swing.JFrame {
 
         opcaoInserir = new javax.swing.ButtonGroup();
         opcaoListar = new javax.swing.ButtonGroup();
+        Stand = new javax.swing.JPanel();
+        scrollPaneCarros = new javax.swing.JScrollPane();
+        tabelaCarros = new javax.swing.JTable();
+        jLabel27 = new javax.swing.JLabel();
+        contaComprador = new javax.swing.JTextField();
+        vender = new javax.swing.JButton();
+        scrollPaneVendas = new javax.swing.JScrollPane();
+        tabelaVendas = new javax.swing.JTable();
+        jLabel28 = new javax.swing.JLabel();
+        jLabel29 = new javax.swing.JLabel();
         Principal = new javax.swing.JTabbedPane();
         Inserir = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -109,16 +127,17 @@ public class Principal extends javax.swing.JFrame {
         LoginSucesso = new javax.swing.JPanel();
         bemvindo = new javax.swing.JLabel();
         logout = new javax.swing.JButton();
-        Levantar = new javax.swing.JPanel();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        quantialevantar = new javax.swing.JTextField();
-        levantarbtn = new javax.swing.JButton();
+        Clientes = new javax.swing.JPanel();
         Depositar = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         quantiadepositar = new javax.swing.JTextField();
         depositarbtn = new javax.swing.JButton();
+        Levantar = new javax.swing.JPanel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        quantialevantar = new javax.swing.JTextField();
+        levantarbtn = new javax.swing.JButton();
         Transferir = new javax.swing.JPanel();
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
@@ -127,8 +146,91 @@ public class Principal extends javax.swing.JFrame {
         quantia = new javax.swing.JTextField();
         transferirbtn = new javax.swing.JButton();
 
+        tabelaCarros.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        tabelaCarros.addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentShown(java.awt.event.ComponentEvent evt) {
+                tabelaCarrosComponentShown(evt);
+            }
+        });
+        scrollPaneCarros.setViewportView(tabelaCarros);
+
+        jLabel27.setText("conta de comprador:");
+
+        vender.setText("Vender");
+        vender.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                venderMouseClicked(evt);
+            }
+        });
+
+        tabelaVendas.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        scrollPaneVendas.setViewportView(tabelaVendas);
+
+        jLabel28.setText("Lista de vendas:");
+
+        jLabel29.setText("Lista de Carros do Stand");
+
+        javax.swing.GroupLayout StandLayout = new javax.swing.GroupLayout(Stand);
+        Stand.setLayout(StandLayout);
+        StandLayout.setHorizontalGroup(
+            StandLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(StandLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(StandLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(scrollPaneCarros, javax.swing.GroupLayout.PREFERRED_SIZE, 419, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(StandLayout.createSequentialGroup()
+                        .addComponent(jLabel27)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(contaComprador, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(vender))
+                    .addComponent(scrollPaneVendas, javax.swing.GroupLayout.PREFERRED_SIZE, 419, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel28)
+                    .addComponent(jLabel29))
+                .addContainerGap(15, Short.MAX_VALUE))
+        );
+        StandLayout.setVerticalGroup(
+            StandLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(StandLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel29)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(scrollPaneCarros, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(StandLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel27)
+                    .addComponent(contaComprador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(vender))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel28)
+                .addGap(18, 18, 18)
+                .addComponent(scrollPaneVendas, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(449, 277));
+        setMinimumSize(new java.awt.Dimension(500, 277));
+        setPreferredSize(new java.awt.Dimension(559, 456));
 
         Pessoa.setVisible(false);
         Pessoa.setEnabled(false);
@@ -425,11 +527,11 @@ public class Principal extends javax.swing.JFrame {
                     .addComponent(jLabel25)
                     .addComponent(combustivel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(CarroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(InserirCa)
+                .addGroup(CarroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(CarroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel26)
-                        .addComponent(preco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(preco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(InserirCa))
                 .addContainerGap(138, Short.MAX_VALUE))
         );
 
@@ -544,14 +646,15 @@ public class Principal extends javax.swing.JFrame {
             ListarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ListarLayout.createSequentialGroup()
                 .addContainerGap(22, Short.MAX_VALUE)
-                .addGroup(ListarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(ListarLayout.createSequentialGroup()
-                        .addComponent(ListarPessoas)
-                        .addGap(18, 18, 18)
-                        .addComponent(ListarContas)
-                        .addGap(18, 18, 18)
-                        .addComponent(ListarCarros))
-                    .addComponent(scrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 452, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(ListarPessoas)
+                .addGap(18, 18, 18)
+                .addComponent(ListarContas)
+                .addGap(18, 18, 18)
+                .addComponent(ListarCarros)
+                .addGap(157, 157, 157))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ListarLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(scrollPane)
                 .addContainerGap())
         );
         ListarLayout.setVerticalGroup(
@@ -594,7 +697,7 @@ public class Principal extends javax.swing.JFrame {
                         .addComponent(nconta, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(LoginBtn)))
-                .addContainerGap(215, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         LoginPanelLayout.setVerticalGroup(
             LoginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -606,7 +709,7 @@ public class Principal extends javax.swing.JFrame {
                     .addComponent(jLabel12)
                     .addComponent(nconta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(LoginBtn))
-                .addContainerGap(281, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         LoginSucesso.setPreferredSize(new java.awt.Dimension(432, 362));
@@ -619,48 +722,6 @@ public class Principal extends javax.swing.JFrame {
                 logoutMouseClicked(evt);
             }
         });
-
-        jLabel13.setText("Levantar");
-
-        jLabel14.setText("Quantia:");
-
-        levantarbtn.setText("Confirmar");
-        levantarbtn.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                levantarbtnMouseClicked(evt);
-            }
-        });
-
-        javax.swing.GroupLayout LevantarLayout = new javax.swing.GroupLayout(Levantar);
-        Levantar.setLayout(LevantarLayout);
-        LevantarLayout.setHorizontalGroup(
-            LevantarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(LevantarLayout.createSequentialGroup()
-                .addGroup(LevantarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(LevantarLayout.createSequentialGroup()
-                        .addGap(186, 186, 186)
-                        .addComponent(jLabel13))
-                    .addGroup(LevantarLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel14)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(quantialevantar, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(levantarbtn)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        LevantarLayout.setVerticalGroup(
-            LevantarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(LevantarLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel13)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(LevantarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel14)
-                    .addComponent(quantialevantar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(levantarbtn))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
 
         jLabel10.setText("Depositar");
 
@@ -704,6 +765,48 @@ public class Principal extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        jLabel13.setText("Levantar");
+
+        jLabel14.setText("Quantia:");
+
+        levantarbtn.setText("Confirmar");
+        levantarbtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                levantarbtnMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout LevantarLayout = new javax.swing.GroupLayout(Levantar);
+        Levantar.setLayout(LevantarLayout);
+        LevantarLayout.setHorizontalGroup(
+            LevantarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(LevantarLayout.createSequentialGroup()
+                .addGroup(LevantarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(LevantarLayout.createSequentialGroup()
+                        .addGap(186, 186, 186)
+                        .addComponent(jLabel13))
+                    .addGroup(LevantarLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel14)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(quantialevantar, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(levantarbtn)))
+                .addContainerGap(195, Short.MAX_VALUE))
+        );
+        LevantarLayout.setVerticalGroup(
+            LevantarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(LevantarLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel13)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(LevantarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel14)
+                    .addComponent(quantialevantar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(levantarbtn))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
         jLabel16.setText("Transferir");
 
         jLabel17.setText("Numero de conta:");
@@ -739,7 +842,7 @@ public class Principal extends javax.swing.JFrame {
                                 .addComponent(conta, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(18, 18, 18)
                         .addComponent(transferirbtn)))
-                .addContainerGap(159, Short.MAX_VALUE))
+                .addContainerGap(171, Short.MAX_VALUE))
         );
         TransferirLayout.setVerticalGroup(
             TransferirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -762,23 +865,49 @@ public class Principal extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        javax.swing.GroupLayout ClientesLayout = new javax.swing.GroupLayout(Clientes);
+        Clientes.setLayout(ClientesLayout);
+        ClientesLayout.setHorizontalGroup(
+            ClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ClientesLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(Transferir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(ClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(ClientesLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addGroup(ClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(Levantar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(Depositar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addContainerGap()))
+        );
+        ClientesLayout.setVerticalGroup(
+            ClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ClientesLayout.createSequentialGroup()
+                .addContainerGap(218, Short.MAX_VALUE)
+                .addComponent(Transferir, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+            .addGroup(ClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(ClientesLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(Levantar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(58, 58, 58)
+                    .addComponent(Depositar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(106, Short.MAX_VALUE)))
+        );
+
         javax.swing.GroupLayout LoginSucessoLayout = new javax.swing.GroupLayout(LoginSucesso);
         LoginSucesso.setLayout(LoginSucessoLayout);
         LoginSucessoLayout.setHorizontalGroup(
             LoginSucessoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(LoginSucessoLayout.createSequentialGroup()
-                .addGroup(LoginSucessoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Levantar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Depositar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(LoginSucessoLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(LoginSucessoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Transferir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(LoginSucessoLayout.createSequentialGroup()
-                                .addComponent(bemvindo)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(logout)))))
+                .addContainerGap()
+                .addComponent(bemvindo)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 306, Short.MAX_VALUE)
+                .addComponent(logout)
                 .addContainerGap())
+            .addGroup(LoginSucessoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(Clientes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         LoginSucessoLayout.setVerticalGroup(
             LoginSucessoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -787,13 +916,11 @@ public class Principal extends javax.swing.JFrame {
                 .addGroup(LoginSucessoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(bemvindo)
                     .addComponent(logout))
-                .addGap(18, 18, 18)
-                .addComponent(Levantar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(Depositar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(Transferir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(328, Short.MAX_VALUE))
+            .addGroup(LoginSucessoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, LoginSucessoLayout.createSequentialGroup()
+                    .addGap(0, 47, Short.MAX_VALUE)
+                    .addComponent(Clientes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
         javax.swing.GroupLayout LoginLayout = new javax.swing.GroupLayout(Login);
@@ -1152,6 +1279,46 @@ public class Principal extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_ListarCarrosItemStateChanged
 
+    private void tabelaCarrosComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_tabelaCarrosComponentShown
+        // TODO add your handling code here:
+        DefaultTableModel model = (DefaultTableModel) tabelaCarros.getModel();
+        for(int i=0;i<model.getRowCount();i++){
+            model.removeRow(i);
+        }
+        model.setColumnCount(0);
+        model.setRowCount(0);
+        model.addColumn("Matricula");
+        model.addColumn("Ano");
+        model.addColumn("Marca");
+        model.addColumn("Modelo");
+        model.addColumn("Cor");
+        model.addColumn("Combustivel");
+        model.addColumn("Preco");
+        model.addColumn("Titular");
+        for(int i=0;i<ac.size();i++){
+            if(ap.get(0).getNome().equals(ac.get(i).getTitular().getNome())){
+                Object[] linha ={ac.get(i).getMatricula(),ac.get(i).getAno(),ac.get(i).getMarca(),
+                    ac.get(i).getModelo(),ac.get(i).getCor(),ac.get(i).getCombustivel(),ac.get(i).getPreco(),
+                    ac.get(i).getTitular().getNome()};
+                model.addRow(linha);
+            }
+        }
+    }//GEN-LAST:event_tabelaCarrosComponentShown
+
+    private void venderMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_venderMouseClicked
+        // TODO add your handling code here:
+        int comprador = Integer.parseInt(contaComprador.getText());
+        for(int i=0;i<acb.size();i++){
+            if(acb.get(i).getNumero()!=0){
+                
+                //if(acb.get(i).getSaldo())
+                
+            }else{
+                javax.swing.JOptionPane.showMessageDialog(null,"Nao se pode vender um carro a si proprio\n");
+            }
+        }
+    }//GEN-LAST:event_venderMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -1190,6 +1357,7 @@ public class Principal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Carro;
+    private javax.swing.JPanel Clientes;
     private javax.swing.JPanel Conta;
     private javax.swing.JPanel Depositar;
     private javax.swing.JPanel Inserir;
@@ -1213,11 +1381,13 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JPanel Pessoa;
     private javax.swing.JPanel PessoaConta;
     private javax.swing.JTabbedPane Principal;
+    private javax.swing.JPanel Stand;
     private javax.swing.JPanel Transferir;
     private javax.swing.JTextField ano;
     private javax.swing.JLabel bemvindo;
     private javax.swing.JTextField combustivel;
     private javax.swing.JTextField conta;
+    private javax.swing.JTextField contaComprador;
     private javax.swing.JTextField cor;
     private javax.swing.JButton depositarbtn;
     private javax.swing.JLabel jLabel1;
@@ -1239,6 +1409,9 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -1264,7 +1437,12 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JTextField saldoC;
     private javax.swing.JTextField saldoPC;
     private javax.swing.JScrollPane scrollPane;
+    private javax.swing.JScrollPane scrollPaneCarros;
+    private javax.swing.JScrollPane scrollPaneVendas;
     private javax.swing.JTable tabela;
+    private javax.swing.JTable tabelaCarros;
+    private javax.swing.JTable tabelaVendas;
     private javax.swing.JButton transferirbtn;
+    private javax.swing.JButton vender;
     // End of variables declaration//GEN-END:variables
 }
