@@ -59,16 +59,6 @@ public class Principal extends javax.swing.JFrame {
 
         opcaoInserir = new javax.swing.ButtonGroup();
         opcaoListar = new javax.swing.ButtonGroup();
-        Stand = new javax.swing.JPanel();
-        scrollPaneCarros = new javax.swing.JScrollPane();
-        tabelaCarros = new javax.swing.JTable();
-        jLabel27 = new javax.swing.JLabel();
-        contaComprador = new javax.swing.JTextField();
-        vender = new javax.swing.JButton();
-        scrollPaneVendas = new javax.swing.JScrollPane();
-        tabelaVendas = new javax.swing.JTable();
-        jLabel28 = new javax.swing.JLabel();
-        jLabel29 = new javax.swing.JLabel();
         Principal = new javax.swing.JTabbedPane();
         Inserir = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -145,88 +135,16 @@ public class Principal extends javax.swing.JFrame {
         jLabel18 = new javax.swing.JLabel();
         quantia = new javax.swing.JTextField();
         transferirbtn = new javax.swing.JButton();
-
-        tabelaCarros.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        tabelaCarros.addComponentListener(new java.awt.event.ComponentAdapter() {
-            public void componentShown(java.awt.event.ComponentEvent evt) {
-                tabelaCarrosComponentShown(evt);
-            }
-        });
-        scrollPaneCarros.setViewportView(tabelaCarros);
-
-        jLabel27.setText("conta de comprador:");
-
-        vender.setText("Vender");
-        vender.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                venderMouseClicked(evt);
-            }
-        });
-
-        tabelaVendas.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        scrollPaneVendas.setViewportView(tabelaVendas);
-
-        jLabel28.setText("Lista de vendas:");
-
-        jLabel29.setText("Lista de Carros do Stand");
-
-        javax.swing.GroupLayout StandLayout = new javax.swing.GroupLayout(Stand);
-        Stand.setLayout(StandLayout);
-        StandLayout.setHorizontalGroup(
-            StandLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(StandLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(StandLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(scrollPaneCarros, javax.swing.GroupLayout.PREFERRED_SIZE, 419, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(StandLayout.createSequentialGroup()
-                        .addComponent(jLabel27)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(contaComprador, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(vender))
-                    .addComponent(scrollPaneVendas, javax.swing.GroupLayout.PREFERRED_SIZE, 419, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel28)
-                    .addComponent(jLabel29))
-                .addContainerGap(15, Short.MAX_VALUE))
-        );
-        StandLayout.setVerticalGroup(
-            StandLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(StandLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel29)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(scrollPaneCarros, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(StandLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel27)
-                    .addComponent(contaComprador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(vender))
-                .addGap(18, 18, 18)
-                .addComponent(jLabel28)
-                .addGap(18, 18, 18)
-                .addComponent(scrollPaneVendas, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        Stand = new javax.swing.JPanel();
+        scrollPaneCarros = new javax.swing.JScrollPane();
+        tabelaCarros = new javax.swing.JTable();
+        jLabel27 = new javax.swing.JLabel();
+        contaComprador = new javax.swing.JTextField();
+        vender = new javax.swing.JButton();
+        scrollPaneVendas = new javax.swing.JScrollPane();
+        tabelaVendas = new javax.swing.JTable();
+        jLabel28 = new javax.swing.JLabel();
+        jLabel29 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(500, 277));
@@ -896,6 +814,88 @@ public class Principal extends javax.swing.JFrame {
                     .addContainerGap(106, Short.MAX_VALUE)))
         );
 
+        tabelaCarros.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        tabelaCarros.addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentShown(java.awt.event.ComponentEvent evt) {
+                tabelaCarrosComponentShown(evt);
+            }
+        });
+        scrollPaneCarros.setViewportView(tabelaCarros);
+
+        jLabel27.setText("conta de comprador:");
+
+        vender.setText("Vender");
+        vender.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                venderMouseClicked(evt);
+            }
+        });
+
+        tabelaVendas.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        scrollPaneVendas.setViewportView(tabelaVendas);
+
+        jLabel28.setText("Lista de vendas:");
+
+        jLabel29.setText("Lista de Carros do Stand");
+
+        javax.swing.GroupLayout StandLayout = new javax.swing.GroupLayout(Stand);
+        Stand.setLayout(StandLayout);
+        StandLayout.setHorizontalGroup(
+            StandLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(StandLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(StandLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(scrollPaneCarros, javax.swing.GroupLayout.PREFERRED_SIZE, 419, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(StandLayout.createSequentialGroup()
+                        .addComponent(jLabel27)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(contaComprador, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(vender))
+                    .addComponent(scrollPaneVendas, javax.swing.GroupLayout.PREFERRED_SIZE, 419, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel28)
+                    .addComponent(jLabel29))
+                .addContainerGap(15, Short.MAX_VALUE))
+        );
+        StandLayout.setVerticalGroup(
+            StandLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(StandLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel29)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(scrollPaneCarros, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(StandLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel27)
+                    .addComponent(contaComprador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(vender))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel28)
+                .addGap(18, 18, 18)
+                .addComponent(scrollPaneVendas, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout LoginSucessoLayout = new javax.swing.GroupLayout(LoginSucesso);
         LoginSucesso.setLayout(LoginSucessoLayout);
         LoginSucessoLayout.setHorizontalGroup(
@@ -908,6 +908,11 @@ public class Principal extends javax.swing.JFrame {
                 .addContainerGap())
             .addGroup(LoginSucessoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(Clientes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(LoginSucessoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(LoginSucessoLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(Stand, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         LoginSucessoLayout.setVerticalGroup(
             LoginSucessoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -921,6 +926,11 @@ public class Principal extends javax.swing.JFrame {
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, LoginSucessoLayout.createSequentialGroup()
                     .addGap(0, 47, Short.MAX_VALUE)
                     .addComponent(Clientes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+            .addGroup(LoginSucessoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(LoginSucessoLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(Stand, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
 
         javax.swing.GroupLayout LoginLayout = new javax.swing.GroupLayout(Login);
@@ -1126,6 +1136,41 @@ public class Principal extends javax.swing.JFrame {
                 LoginSucesso.setVisible(true);
                 bemvindo.setText("Bem Vindo "+acb.get(i).getTitular().getNome());
                 contalogin=i;
+                if(nconta.getText().equals("0")){
+                    Clientes.setEnabled(false);
+                    Clientes.setVisible(false);
+                    Stand.setEnabled(true);
+                    Stand.setVisible(true);
+                    
+                    DefaultTableModel model = (DefaultTableModel) tabelaCarros.getModel();
+                    for(int x=0;x<model.getRowCount();x++){
+                        model.removeRow(x);
+                    }
+                    model.setColumnCount(0);
+                    model.setRowCount(0);
+                    model.addColumn("Matricula");
+                    model.addColumn("Ano");
+                    model.addColumn("Marca");
+                    model.addColumn("Modelo");
+                    model.addColumn("Cor");
+                    model.addColumn("Combustivel");
+                    model.addColumn("Preco");
+                    model.addColumn("Titular");
+                    for(int x=0;x<ac.size();x++){
+                        if(ap.get(0).getNome().equals(ac.get(x).getTitular().getNome())){
+                            Object[] linha ={ac.get(x).getMatricula(),ac.get(x).getAno(),ac.get(x).getMarca(),
+                                ac.get(x).getModelo(),ac.get(i).getCor(),ac.get(x).getCombustivel(),ac.get(x).getPreco(),
+                                ac.get(x).getTitular().getNome()};
+                            model.addRow(linha);
+                        }
+                    }
+                    
+                }else{
+                    Stand.setEnabled(false);
+                    Stand.setVisible(false);
+                    Clientes.setEnabled(true);
+                    Clientes.setVisible(true);
+                }
                 break;
             }else if(i==(acb.size()-1) && (Integer.parseInt(nconta.getText()) != acb.get(i).getNumero())){
                 javax.swing.JOptionPane.showMessageDialog(null,"Utilizador inexistente\n");
@@ -1139,6 +1184,11 @@ public class Principal extends javax.swing.JFrame {
         LoginSucesso.setVisible(false);
         LoginPanel.setEnabled(true);
         LoginPanel.setVisible(true);
+        
+        Stand.setEnabled(false);
+        Stand.setVisible(false);
+        Clientes.setEnabled(false);
+        Clientes.setVisible(false);
         javax.swing.JOptionPane.showMessageDialog(null,"Logout feito com sucesso\n");
         contalogin=-1;
     }//GEN-LAST:event_logoutMouseClicked
@@ -1309,12 +1359,29 @@ public class Principal extends javax.swing.JFrame {
         // TODO add your handling code here:
         int comprador = Integer.parseInt(contaComprador.getText());
         for(int i=0;i<acb.size();i++){
-            if(acb.get(i).getNumero()!=0){
-                
-                //if(acb.get(i).getSaldo())
+            //if(acb.get(i).getNumero()!=0){
+            if(comprador!=0){
+                if(acb.get(i).getNumero()==comprador){
+                    //int comp=i;
+                    DefaultTableModel model = (DefaultTableModel) tabelaCarros.getModel();
+                    javax.swing.JOptionPane.showMessageDialog(null,model.getValueAt(tabelaCarros.getSelectedRow(),6));
+                    if(acb.get(i).getSaldo()>= ac.get(tabelaCarros.getSelectedRow()).getPreco()){
+                        acb.get(i).setSaldo(acb.get(i).getSaldo()-ac.get(tabelaCarros.getSelectedRow()).getPreco());
+                        acb.get(0).setSaldo(acb.get(0).getSaldo()+ac.get(tabelaCarros.getSelectedRow()).getPreco());
+                        ac.get(tabelaCarros.getSelectedRow()).getTitular().setNome(acb.get(i).getTitular().getNome());
+                        javax.swing.JOptionPane.showMessageDialog(null,"Carro vendido por "+ac.get(tabelaCarros.getSelectedRow()).getPreco()+" €");
+                    }else{
+                        javax.swing.JOptionPane.showMessageDialog(null,"Saldo Insuficiente na conta\n");
+                    }
+                    break;
+                }else if(i==(acb.size()-1) && acb.get(i).getNumero()!=comprador){
+                    javax.swing.JOptionPane.showMessageDialog(null,"Conta Inexistente\n");
+                    break;
+                }
                 
             }else{
                 javax.swing.JOptionPane.showMessageDialog(null,"Nao se pode vender um carro a si proprio\n");
+                break;
             }
         }
     }//GEN-LAST:event_venderMouseClicked
