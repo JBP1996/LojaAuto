@@ -14,6 +14,7 @@ import model.Pessoa;
 import java.util.ArrayList;
 import java.util.Scanner;
 import model.Carro;
+import model.Venda;
 
 /**
  *
@@ -23,6 +24,7 @@ public class funcionalidade {
     ArrayList <Pessoa> ap = Principal.ap;
     ArrayList <ContaBancaria> acb= Principal.acb;
     ArrayList <Carro> ac = Principal.ac;
+    ArrayList <Venda> av = Principal.av;
        
     public void inserirPessoa(Pessoa p,ArrayList <Pessoa> ap,String nome){
         p = new Pessoa(nome);
@@ -39,5 +41,10 @@ public class funcionalidade {
         
         c= new Carro(matricula, marca, modelo, ano, cor, combustivel,preco, ap.get(pessoa));
         ac.add(c);
+    }
+    
+    public void inserirVenda(Carro carro, Pessoa pessoa,double preco,String data){
+        Venda v = new Venda(carro,pessoa,preco,data);
+        av.add(v);
     }
 }
