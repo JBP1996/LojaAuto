@@ -12,6 +12,7 @@ import lojaAuto.Principal;
 import model.ContaBancaria;
 import model.Pessoa;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Scanner;
 import model.Carro;
 import model.Venda;
@@ -43,8 +44,15 @@ public class funcionalidade {
         ac.add(c);
     }
     
+    public void inserirVenda(Carro carro, Pessoa pessoa,double preco,Date data){
+        Venda v = new Venda(carro,pessoa,preco,data);
+        av.add(v);
+    }
+    
+    /*
     public void inserirVenda(Carro carro, Pessoa pessoa,double preco,String data){
         Venda v = new Venda(carro,pessoa,preco,data);
         av.add(v);
     }
+    */
 }

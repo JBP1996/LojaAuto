@@ -5,6 +5,8 @@
  */
 package model;
 
+import java.util.Date;
+
 /**
  *
  * @author JBP1996 Atec
@@ -13,9 +15,19 @@ public class Venda {
     private Carro carroVendido;
     private Pessoa comprador;
     private double preco;
-    private String data;
+    //private String data;
+    private Date data;
     
+    /*
     public Venda(Carro carroVendido, Pessoa comprador, double preco, String data) {
+        this.carroVendido = carroVendido;
+        this.comprador = comprador;
+        this.preco = preco;
+        this.data = data;
+    }
+    */
+    
+    public Venda(Carro carroVendido, Pessoa comprador, double preco, Date data) {
         this.carroVendido = carroVendido;
         this.comprador = comprador;
         this.preco = preco;
@@ -45,12 +57,23 @@ public class Venda {
     public void setPreco(double preco) {
         this.preco = preco;
     }
-
+    
+    
+    /*
     public String getData() {
         return data;
     }
 
     public void setData(String data) {
+        this.data = data;
+    }
+    */
+
+    public Date getData() {
+        return data;
+    }
+
+    public void setData(Date data) {
         this.data = data;
     }
 }
