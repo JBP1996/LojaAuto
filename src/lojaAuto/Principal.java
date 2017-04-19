@@ -1197,7 +1197,7 @@ public class Principal extends javax.swing.JFrame {
                     for(int x=0;x<ac.size();x++){
                         if(ap.get(0).getNome().equals(ac.get(x).getTitular().getNome())){
                             Object[] linha ={ac.get(x).getMatricula(),ac.get(x).getAno(),ac.get(x).getMarca(),
-                                ac.get(x).getModelo(),ac.get(i).getCor(),ac.get(x).getCombustivel(),ac.get(x).getPreco(),
+                                ac.get(x).getModelo(),ac.get(x).getCor(),ac.get(x).getCombustivel(),ac.get(x).getPreco(),
                                 ac.get(x).getTitular().getNome()};
                             model.addRow(linha);
                         }
@@ -1208,6 +1208,29 @@ public class Principal extends javax.swing.JFrame {
                     Stand.setVisible(false);
                     Clientes.setEnabled(true);
                     Clientes.setVisible(true);
+                    DefaultTableModel model = (DefaultTableModel) tabelaListaCarros.getModel();
+                    for(int x=0;x<model.getRowCount();x++){
+                        model.removeRow(x);
+                    }
+                    model.setColumnCount(0);
+                    model.setRowCount(0);
+                    model.addColumn("Matricula");
+                    model.addColumn("Ano");
+                    model.addColumn("Marca");
+                    model.addColumn("Modelo");
+                    model.addColumn("Cor");
+                    model.addColumn("Combustivel");
+                    model.addColumn("Preco");
+                    model.addColumn("Titular");
+                    for(int x=0;x<ac.size();x++){
+                        if(ap.get(contalogin).getNome().equals(ac.get(x).getTitular().getNome())){
+                            Object[] linha ={ac.get(x).getMatricula(),ac.get(x).getAno(),ac.get(x).getMarca(),
+                                ac.get(x).getModelo(),ac.get(i).getCor(),ac.get(x).getCombustivel(),ac.get(x).getPreco(),
+                                ac.get(x).getTitular().getNome()};
+                            model.addRow(linha);
+                        }
+                    }
+                    
                 }
                 break;
             }else if(i==(acb.size()-1) && (Integer.parseInt(nconta.getText()) != acb.get(i).getNumero())){
@@ -1227,6 +1250,18 @@ public class Principal extends javax.swing.JFrame {
         Stand.setVisible(false);
         Clientes.setEnabled(false);
         Clientes.setVisible(false);
+        if(nconta.getText().equals("0")){
+            DefaultTableModel model = (DefaultTableModel) tabelaCarros.getModel();
+            for(int x=0;x<model.getRowCount();x++){
+                model.removeRow(x);
+            }
+        }else{
+            DefaultTableModel model = (DefaultTableModel) tabelaListaCarros.getModel();
+            for(int x=0;x<model.getRowCount();x++){
+                model.removeRow(x);
+            }
+        }
+        
         javax.swing.JOptionPane.showMessageDialog(null,"Logout feito com sucesso\n");
         contalogin=-1;
     }//GEN-LAST:event_logoutMouseClicked
